@@ -10,7 +10,7 @@ const getAllHostedZones = async (req, res) => {
     const command = new ListHostedZonesCommand({});
     const response = await route53Client.send(command);
     console.log("Hosted zone reieved successfully:", response.HostedZones);
-    res.status(201).json(response.HostedZones);
+    res.status(200).json(response.HostedZones);
   } catch (error) {
     console.error("Error:", error);
     res.status(400).send(error);
@@ -30,7 +30,7 @@ const createHostedZone = async (req, res) => {
     const command = new CreateHostedZoneCommand(params);
     const response = await route53Client.send(command);
     console.log("Hosted zone created successfully:", response.HostedZone);
-    res.status(201).json(response.HostedZone);
+    res.status(200).json(response.HostedZone);
   } catch (error) {
     console.error("Error:", error);
     // throw error; // Throw error to handle it in the caller function

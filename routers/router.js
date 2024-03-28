@@ -19,7 +19,7 @@ router.post("/deleteHostedZone", deleteHostedZone);
 
 // DNSRecord Routes
 
-router.get("/getAllDNSRecords", getAllDNSRecords);
+router.post("/getAllDNSRecords", getAllDNSRecords);
 router.post("/createDNSRecord", createDNSRecord);
 router.post("/deleteDNSRecord", deleteDNSRecord);
 router.post("/updateDNSRecord", updateDNSRecord);
